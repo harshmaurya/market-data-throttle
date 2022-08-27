@@ -15,5 +15,6 @@
 - If the rate limit is reached, subsequent messages are to be sent at the next **earliest** possible opportunity.
     - It is possible that multiple messages arrive from source before the cool off period. To ensure fairness, a queue has been implemented.
     - For handling concurrency in scheduling, single threaded model has been used.
-- It is acceptable to skip the intermediate/old data while waiting in a queue for the restriction period to be over. 
-- Ordering between different symbols need not be maintained. That is, if symbol A arrives before another symbol B, it is acceptable to process symbol B first.
+- As an optimization, it is acceptable to skip the intermediate/old data while waiting in a queue for the restriction period to be over. 
+- Processing order between different symbols need not be maintained. That is, if symbol A arrives before another symbol B, it is acceptable to process symbol B first.
+- Unit tests has been written to cover many of the above cases. They manipulate time programatically instead of using Thread.Sleep.

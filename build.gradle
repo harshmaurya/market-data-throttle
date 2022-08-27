@@ -11,6 +11,7 @@ repositories {
 
 dependencies {
     implementation "io.reactivex.rxjava3:rxjava:3.1.5"
-    implementation "org.javatuples:javatuples:1.2"
     testCompile "junit:junit:4.12"
+    testImplementation 'org.mockito:mockito-all:1.10.19'
+    testImplementation 'com.mercateo:test-clock:1.0.2'
 }
